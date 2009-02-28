@@ -4,7 +4,8 @@ class CreateOpinions < ActiveRecord::Migration
       t.integer :person_id
       t.integer :thing_id
       t.text :comment
-      t.string :type
+      t.column :type, "SET('love','hate')", :default => 'hate'
+      t.boolean :original, :default => false
 
       t.timestamps
     end

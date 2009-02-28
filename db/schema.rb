@@ -11,14 +11,8 @@
 
 ActiveRecord::Schema.define(:version => 20090228012823) do
 
-  create_table "opinions", :force => true do |t|
-    t.integer  "person_id"
-    t.integer  "thing_id"
-    t.text     "comment"
-    t.string   "type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "opinions" because of following StandardError
+#   Unknown type 'set('love','hate')' for column 'type'
 
   create_table "people", :force => true do |t|
     t.string   "username"
