@@ -51,11 +51,19 @@
 		<h3>Anti-social networking</h3>
 
 		<div id="user-bar">
+<% if @current_user.nil? -%>
 			<ul>
-				<li id="user-bar-welcome">Welcome back, John Doe!</li>
-				<li id="user-bar-logout"><a href="#">Log out</a></li>
-				<li id="user-bar-profile"><a href="#">Your profile</a></li>
+				<li id="user-bar-login"><a href="/account/login">Log in</a></li>
+				<li id="user-bar-register"><a href="/account/register">Register</a></li>
 			</ul>
+<% else -%>
+			<ul>
+				<li id="user-bar-welcome">Welcome back, <%= @current_user.full_name -%>!</li>
+				<li id="user-bar-logout"><a href="/account/logout">Log out</a></li>
+				<li id="user-bar-profile"><a href="/people/<%= @current_user.username -%>">Your profile</a></li>
+			</ul>
+
+<% end -%>
 		</div>
 
 	</div>
