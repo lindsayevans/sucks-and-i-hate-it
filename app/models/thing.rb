@@ -27,4 +27,18 @@ class Thing < ActiveRecord::Base
 	end
     end
 
+    def Thing.type_from_domain(domain)
+	case domain.split('.')[0]
+	when 'sucksandihateit'
+	    'it'
+	when 'suckandihatethem'
+	    'them'
+	when 'sucksandihatehim'
+	    'him'
+	when 'sucksandihateher'
+	    'her'
+	end
+
+    end
+
 end

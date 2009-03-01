@@ -13,7 +13,7 @@ class HomepageController < ApplicationController
 	    return view_thing @thing
 	else
 	    @thing_name = @thing_url.titleize
-	    return new_thing({:url => @thing_url, :name => @thing_name})
+	    return new_thing({:url => @thing_url, :name => @thing_name, :type => Thing.type_from_domain(request.domain)})
 	end
     end
 

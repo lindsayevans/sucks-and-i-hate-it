@@ -1,5 +1,7 @@
 <%
 @page_title = @thing.name
+@body_id = 'things'
+@body_classes = ['view']
 -%>
 
 <p><%= @thing.creator.full_name -%> <%= random_prefix -%>:</p>

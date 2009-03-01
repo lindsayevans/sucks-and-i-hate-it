@@ -1,3 +1,8 @@
+<%
+@page_title = @thing.name
+@body_id = 'things'
+@body_classes = ['new']
+-%>
 		<p>Believe it or not, nobody thinks that <strong><%= @thing.name -%></strong> sucks yet.</p>
 		<p>Want to get the party started? Just fill in the blanks below &amp; hit the big shiny button!</p>
 		<form action="/things/create" method="post">

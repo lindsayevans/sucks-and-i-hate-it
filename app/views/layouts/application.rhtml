@@ -1,4 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%
+
+@body_id = @body_id || params[:controller]
+@body_classes = @body_classes || [params[:action]]
+
+-%><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -27,7 +32,7 @@
 
 </head>
 
-<body id="<%= params[:controller] -%>" class="<%= params[:action] -%>">
+<body id="<%= @body_id -%>" class="<%= @body_classes.join(' ') -%>">
 
 <div id="page-wrapper" class="fluid-proportional">
 
@@ -37,8 +42,12 @@
 			<li><a href="#content">Skip to content</a></li>
 			<li><a href="#navigation">Skip to navigation</a></li>
 		</ul>
+<% if @body_id == 'homepage' -%>
+		<h1>Sucks and I hate it</h1>
+<% else -%>
+		<h2><a href="/">Sucks and I hate it</a></h2>
 
-		<h2><a href="#">Sucks and I hate it</a></h2>
+<% end -%>
 		<h3>Anti-social networking</h3>
 
 		<div id="user-bar">
