@@ -405,7 +405,7 @@ fieldset.submit-buttons p.back-link {
 
 .field-group {
 	clear: both;
-	overflow: auto;
+	overflow: hidden;
 	padding-top: 7px;
 }
 

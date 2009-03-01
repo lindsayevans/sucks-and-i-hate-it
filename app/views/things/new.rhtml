@@ -1,0 +1,46 @@
+		<p>Believe it or not, nobody thinks that <strong><%= @thing.name -%></strong> sucks yet.</p>
+		<p>Want to get the party started? Just fill in the blanks below &amp; hit the big shiny button!</p>
+		<form action="/things/create" method="post">
+
+<!--
+			<div class="error-messages">
+				<p><strong>There were problems with the details you provided:</strong></p>
+				<ul>
+					<li><a href="#email-address">Please enter a valid email address</a></li>
+					<li><a href="#password">Your password must be at least 6 characters long</a></li>
+				</ul>
+			</div>
+-->
+			<fieldset>
+				<div class="field-group">
+					<input type="text" id="thing-name" name="thing[name]" size="30" <%= @thing.name -%> />
+				</div>
+
+				<div class="field-group">
+					<select name="thing[type]" id="thing-type">
+					    <option<%= ' selected="selected"' if @thing.type == 'it' -%>>sucks and I hate it</option>
+					    <option<%= ' selected="selected"' if @thing.type == 'him' -%>>sucks and I hate him</option>
+					    <option<%= ' selected="selected"' if @thing.type == 'her' -%>>sucks and I hate her</option>
+					    <option<%= ' selected="selected"' if @thing.type == 'them' -%>>suck and I hate them</option>
+					</select>
+					<div class="help note">[explanation of types]</div>
+				</div>
+				<!-- URL preview -->
+
+				<div class="field-group">
+					<label for="comments">Comments <em>optional</em></label>
+					<textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+				</div>
+
+				<div class="field-group">
+					<label for="openid-url">OpenID URL</label>
+					<input type="text" id="openid-url" name="person[openid_url]" size="50" />
+					<div class="help note">[explanation of OpenID]</div>
+				</div>
+			</fieldset>
+
+			<fieldset class="submit-buttons">
+				<input type="submit" name="submit-button" value="Do It!" class="submit-button" />
+			</fieldset>
+
+		</form>
