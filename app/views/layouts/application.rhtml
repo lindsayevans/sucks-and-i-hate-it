@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= @page_title -%><%= ' - ' if !@page_title.nil? %>SucksAndIHateIt.com</title>
+
+	<!-- TODO: look at what metadata we should be using -->
+	<meta name="RIGHTS" content="http://www.telstra.com/global/copyright/index.shtml" />
+	<meta name="TITLE" content="Page Title - Section Title - Site Title" />
+	<meta name="DESCRIPTION" content="PAGE_DESCRIPTION" />
+	<meta name="KEYWORDS" content="KEYWORDS" />
+	<meta name="ROBOTS" content="INDEX, FOLLOW" />
+	<meta name="LANGUAGE" content="English" />
+
+	<style type="text/css" media="screen,projection">
+	@import "css/default.css";
+	</style>
+<!--[if lte IE 6 ]>
+	<style type="text/css" media="screen,projection">
+	@import "css/default-ie6.css";
+	</style>
+<![endif]-->
+	<style type="text/css" media="print">
+	@import "css/print.css";
+	</style>
+
+</head>
+
+<body id="<%= params[:controller] -%>" class="<%= params[:action] -%>">
+
+<div id="page-wrapper" class="fluid-proportional">
+
+	<div id="header" class="h5-header">
+
+		<ul id="skip-navigation">
+			<li><a href="#content">Skip to content</a></li>
+			<li><a href="#navigation">Skip to navigation</a></li>
+		</ul>
+
+		<h2><a href="#">Sucks and I hate it</a></h2>
+		<h3>Anti-social networking</h3>
+
+		<div id="user-bar">
+			<ul>
+				<li id="user-bar-welcome">Welcome back, John Doe!</li>
+				<li id="user-bar-logout"><a href="#">Log out</a></li>
+				<li id="user-bar-profile"><a href="#">Your profile</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div id="content">
+<%= yield -%>
+	</div>
+
+	<div id="footer" class="h5-footer">
+<!--
+		<ul>
+			<li class="first"><a href="#">Section 1</a></li>
+			<li><a href="#">Section 2</a></li>
+			<li class="current"><a href="#">Section 3</a></li>
+			<li><a href="#">Section 4</a></li>
+			<li><a href="#">Section 5</a></li>
+			<li><a href="#">Section 6</a></li>
+			<li class="last"><a href="#">Section 7</a></li>
+		</ul>
+-->
+		<p class="copyright">Some stuff is copyright the original authors, everything else is CC-something</p>
+	</div>
+
+</div>
+
+</body>
+</html>
+

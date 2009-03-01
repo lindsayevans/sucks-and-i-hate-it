@@ -1,0 +1,8 @@
+<%
+@page_title = @thing.name
+-%>
+
+<p><%= @thing.creator.full_name -%> <%= random_prefix -%>:</p>
+<h1><%= @thing.name -%></h1>
+<h2><%= @thing.suffix -%></h2>
+<p><%= time_ago_in_words @thing.created_at -%> ago</p>
